@@ -44,6 +44,6 @@ if submit_button:
     img.show()
 
     st.success(f"QR {nombre}. Generado con exito")
-    st.write(f"Mensaje: {nombre}")
+    st.write(f"Vale por una negrita o chokita")
     st.image(image, caption='Este es el RQ', use_column_width=True)
 
