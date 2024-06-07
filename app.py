@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 # Título de la aplicación
 st.title("Generador de QR para fono")
@@ -37,10 +38,12 @@ if submit_button:
     
     # Guardar la imagen en un archivo
     img.save("qrcode_example.png")
+    image = Image.open('qrcode_example.png')
     
     # Mostrar la imagen del QR (opcional)
     img.show()
 
     st.success(f"QR {nombre}. Generado con exito")
     st.write(f"Mensaje: {nombre}")
+    st.image(image, caption='Este es el RQ', use_column_width=True)
 
