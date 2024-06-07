@@ -19,7 +19,7 @@ if submit_button:
     import qrcode
     
     # Datos que quieres codificar en el QR
-    data = "https://www.example.com"
+    data = nombre#"https://www.example.com"
     
     # Crear una instancia de QRCode
     qr = qrcode.QRCode(
