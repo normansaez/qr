@@ -1,25 +1,22 @@
 import streamlit as st
 from PIL import Image
+import qrcode
 
 # Título de la aplicación
-st.title("Generador de QR para fono")
+st.title("Generador de QR")
 
 # Crear un formulario
 with st.form(key='formulario'):
     # Campos del formulario
-    nombre = st.text_input(label='Escribe aca tu URL')
-#    email = st.text_input(label='Correo Electrónico')
-#    mensaje = st.text_area(label='Mensaje')
-    
+    nombre = st.text_input(label='Escribe aca tu URL para generar QR')
     # Botón para aceptar el formulario
     submit_button = st.form_submit_button(label='Aceptar')
 
 # Acción al aceptar el formulario
 if submit_button:
-    import qrcode
     
     # Datos que quieres codificar en el QR
-    data = nombre#"https://www.example.com"
+    data = nombre
     
     # Crear una instancia de QRCode
     qr = qrcode.QRCode(
@@ -41,9 +38,8 @@ if submit_button:
     image = Image.open('qrcode_example.png')
     
     # Mostrar la imagen del QR (opcional)
-    img.show()
+#    img.show()
 
     st.success(f"QR {nombre}. Generado con exito")
-    st.write(f"Vale por una negrita o chokita")
-    st.image(image, caption='Este es el RQ', use_column_width=True)
+    st.image(image, caption='RQ Generado', use_column_width=True)
 
